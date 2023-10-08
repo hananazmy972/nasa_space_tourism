@@ -1,0 +1,165 @@
+<html>
+<head>
+  <!-- Link to the CSS file -->
+  <link rel="stylesheet" href="../css/booknow.css">
+  <title>
+    Reservation
+  </title>
+</head>
+<body>
+  <h1>Book your trip to space</h1>
+  <form>
+    <!-- Input for full name -->
+    <label for="name">Full name:</label>
+    <input type="text" id="name" name="name" required>
+    <br> <br> 
+    <!-- Input for birthday -->
+    <label for="birthday">Date of birth:</label>
+    <input type="date" id="birthday" name="birthday" required>
+    <br> <br> 
+    <!-- Input for country -->
+    <label for="country">Country:</label>
+    <input type="text" id="country" name="country" required>
+    <br> <br> 
+    <!-- Input for email -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br> <br> 
+    
+    <!-- Select for planet -->
+    <label for="planet">Planet:</label>
+    <select id="planet" name="planet" required onchange="showDate()">
+      <option value="">Select your destination</option>
+      <option value="Mercury">Mercury</option>
+      <option value="Venus">Venus</option>
+      <option value="Mars">Mars</option>
+      <option value="Jupiter">Jupiter</option>
+      <option value="Saturn">Saturn</option>
+      <option value="Uranus">Uranus</option>
+      <option value="Neptune">Neptune</option>
+      <option value="Moon">Moon</option>
+    </select>
+    <br> <br> 
+
+    <!-- Display the date of the next trip -->
+    <div id="date"></div>
+
+    <!-- Select for pre-flight training day -->
+    <label for="training">Pre-flight training day:</label>
+    <select id="training" name="training" required>
+      <option value="">Select your training day</option>
+      <option value="week">A week before the date</option>
+      <option value="two-weeks">Two weeks before the date</option>
+      <option value="three-weeks">Three weeks before the date</option>
+      <option value="month">A month before the date</option>
+    </select>
+    <br> <br> 
+    <!-- Choose a space suit image and size -->
+    <label for ="suit">Space suit:</label>
+
+    <!-- Add more choices here -->
+    <!-- Use images from a free source such as https://www.pexels.com/ -->
+    <!-- Do not use real images of people -->
+
+    <div class="container">
+      <!-- Use a span with class "image" to wrap each image and input -->
+      <!-- Use an input with type "radio" and name "choice" to make only one image selectable -->
+      <!-- Use an id for each input and a label with a for attribute to link the input and the image -->
+      <!-- Use images from a free source such as https://www.pexels.com/ -->
+      <!-- Do not use real images of people -->
+
+      <span class="image">
+        <input type="radio" id="suit1" name="choice" value="suit1">
+        <label for="suit1"><img src="../images/booking/1.jpg" alt="suit1"></label>
+      </span>
+      <br>
+
+      <span class="image">
+        <input type="radio" id="suit2" name="choice" value="suit2">
+        <label for="suit2"><img src="../images/booking/2.jpg" alt="suit3"></label>
+      </span>
+      <br>
+
+      <span class="image">
+        <input type="radio" id="suit3" name="choice" value="suit3">
+        <label for="suit3"><img src="../images/booking/3.jpg" alt="suit3"></label>
+      </span>
+      <br>
+
+      <span class="image">
+        <input type="radio" id="suit4" name="choice" value="suit4">
+        <label for="suit4"><img src="../images/booking/5.jpg" alt="suit4"></label>
+        </span>
+      </div>
+        <br> <br>
+       <!-- Select the size of the space suit -->
+   <select id ="size" name ="size" required>
+      <option value="">Select your size</option>
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+      <option value="XL">XL</option>
+    </select>
+     <!-- Input for discount code -->
+     <br> <br>
+     <label for="name">discount-code (if available)</label>
+     <input type="text" id="discount-code" name="discount" >
+     <!-- Agree to the requirements of space travel -->
+     <br> <br> <br> 
+   <label for ="agree">I agree to the requirements of space travel.</label>
+   <input type ="checkbox" id ="agree" name ="agree" required>
+   <br> 
+   <form>
+    <!-- Input fields... -->
+
+    <!-- Submit the form -->
+    <button type="submit" id="book-now">Book now</button>
+    <div id="success-message"></div>
+    <!-- JavaScript code -->
+    <script src="../js/booknow.js"></script>
+  </form>
+  <script>
+
+    // Get the elements from the document
+    var planet = document.getElementById("planet");
+    var date = document.getElementById("date");
+
+    // Define a function to show the date based on the planet
+    function showDate() {
+
+      // Get the selected planet
+      var selected = planet.value;
+
+      // Check which planet is selected and show the corresponding date
+      // Use a switch statement for simplicity
+      switch(selected) {
+        case "Mercury":
+          date.innerHTML = "The next trip to Mercury is on 2023-11-15. Have a nice trip!";
+          break;
+        case "Venus":
+          date.innerHTML = "The next trip to Venus is on 2023-12-10.Have a nice trip!";
+          break;
+        case "Mars":
+          date.innerHTML = "The next trip to Mars is on 2024-01-05. Have a nice trip!";
+          break;
+        case "Jupiter":
+          date.innerHTML = "The next trip to Jupiter is on 2024-02-01. Have a nice trip!";
+          break;
+        case "Saturn":
+          date.innerHTML = "The next trip to Saturn is on 2024-03-01. Have a nice trip!";
+          break;
+        case "Uranus":
+          date.innerHTML = "The next trip to Uranus is on 2024-04-01. Have a nice trip!";
+          break;
+        case "Neptune":
+          date.innerHTML = "The next trip to Neptune is on 2024-05-01. Have a nice trip!";
+          break;
+        case "Moon":
+          date.innerHTML = "The next trip to the Moon is on 2023-10-31. Have a nice trip!";
+          break;
+        default:
+          date.innerHTML = "";
+      } }
+</script>
+</body>
+</html>
